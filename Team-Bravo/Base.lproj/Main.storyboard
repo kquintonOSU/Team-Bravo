@@ -56,6 +56,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FkM-Y3-ZnF"/>
+                    <connections>
+                        <outlet property="loginButton" destination="aJr-Hb-ZA8" id="jaF-FW-Xfl"/>
+                        <outlet property="signUpButton" destination="ugw-4j-yHE" id="eIE-tH-gHS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
