@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940606E127E93DE400734F35 /* example3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 940606E027E93DE400734F35 /* example3.mp4 */; };
 		94828DF627D82F57009A521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AA1FFB27D8073500B58D43 /* Main.storyboard */; };
 		94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA1FF527D8073500B58D43 /* AppDelegate.swift */; };
 		94AA1FF827D8073500B58D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA1FF727D8073500B58D43 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		94C8E58127D8173900CF3B25 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C8E58027D8173900CF3B25 /* SignUpViewController.swift */; };
 		94C8E58327D8174B00CF3B25 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C8E58227D8174B00CF3B25 /* LoginViewController.swift */; };
 		94D6890527D855ED00EEA71A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6890427D855ED00EEA71A /* Constants.swift */; };
+		94D6890827D86F4600EEA71A /* example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 94D6890727D86F4600EEA71A /* example.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940606E027E93DE400734F35 /* example3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example3.mp4; sourceTree = "<group>"; };
 		94AA1FF227D8073500B58D43 /* Team-Bravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team-Bravo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AA1FF527D8073500B58D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94AA1FF727D8073500B58D43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		94C8E58027D8173900CF3B25 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94C8E58227D8174B00CF3B25 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		94D6890427D855ED00EEA71A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		94D6890727D86F4600EEA71A /* example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				94C8E58227D8174B00CF3B25 /* LoginViewController.swift */,
 				94AA1FF927D8073500B58D43 /* ViewController.swift */,
 				94AA1FFB27D8073500B58D43 /* Main.storyboard */,
+				94D6890627D86F0F00EEA71A /* Media */,
 				94AA200127D8073600B58D43 /* Assets.xcassets */,
 				94AA200327D8073600B58D43 /* LaunchScreen.storyboard */,
 				94AA200627D8073600B58D43 /* Info.plist */,
@@ -169,6 +174,15 @@
 				94AA201B27D8073600B58D43 /* Team_BravoUITestsLaunchTests.swift */,
 			);
 			path = "Team-BravoUITests";
+			sourceTree = "<group>";
+		};
+		94D6890627D86F0F00EEA71A /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				940606E027E93DE400734F35 /* example3.mp4 */,
+				94D6890727D86F4600EEA71A /* example.mp4 */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +307,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D6890827D86F4600EEA71A /* example.mp4 in Resources */,
 				94AA200527D8073600B58D43 /* LaunchScreen.storyboard in Resources */,
 				94AA202927D8074900B58D43 /* GoogleService-Info.plist in Resources */,
 				94AA200227D8073600B58D43 /* Assets.xcassets in Resources */,
+				940606E127E93DE400734F35 /* example3.mp4 in Resources */,
 				94828DF627D82F57009A521D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
