@@ -144,6 +144,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk1-07-ZnW">
+                                <rect key="frame" x="20" y="561" width="185" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Buyers">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fub-xp-ie8">
+                                <rect key="frame" x="209" y="561" width="185" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sellers">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z1z-xv-N9V"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -152,10 +168,15 @@
                             <constraint firstItem="Drs-d8-Mgy" firstAttribute="centerY" secondItem="H8w-Cm-J1E" secondAttribute="centerY" id="swz-2C-I5M"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0kq-jU-fAu"/>
+                    <connections>
+                        <outlet property="buyers" destination="dk1-07-ZnW" id="Fq7-S7-ixP"/>
+                        <outlet property="sellers" destination="fub-xp-ie8" id="Bw5-46-ciP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElZ-Rd-KbZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="86"/>
+            <point key="canvasLocation" x="3492.753623188406" y="85.714285714285708"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="jcr-dc-AvL">
@@ -256,6 +277,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcT-7y-vb0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="60.869565217391312" y="85.714285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a7W-OD-wCP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xhz-g6-d5R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dtO-hy-AES">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JGS-0M-Rcl" kind="relationship" relationship="rootViewController" id="YKb-AX-YGX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lab-EU-2pW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2582.608695652174" y="85.714285714285708"/>
         </scene>
     </scenes>
     <resources>

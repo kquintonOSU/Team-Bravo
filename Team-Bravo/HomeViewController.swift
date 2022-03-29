@@ -15,7 +15,8 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBOutlet weak var buyers: UIButton!    
+    @IBOutlet weak var sellers: UIButton!
     /*
     // MARK: - Navigation
 
