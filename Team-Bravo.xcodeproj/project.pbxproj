@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FC89DDC2804DBAD00B0E001 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */; };
+		2FC89DDE2804DBD600B0E001 /* EventDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */; };
 		940606E127E93DE400734F35 /* example3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 940606E027E93DE400734F35 /* example3.mp4 */; };
 		94828DF627D82F57009A521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AA1FFB27D8073500B58D43 /* Main.storyboard */; };
 		94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA1FF527D8073500B58D43 /* AppDelegate.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
+		2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
 		940606E027E93DE400734F35 /* example3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example3.mp4; sourceTree = "<group>"; };
 		94AA1FF227D8073500B58D43 /* Team-Bravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team-Bravo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AA1FF527D8073500B58D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				94C8E57E27D8172B00CF3B25 /* HomeViewController.swift */,
 				94C8E58227D8174B00CF3B25 /* LoginViewController.swift */,
 				94AA1FF927D8073500B58D43 /* ViewController.swift */,
+				2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */,
+				2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */,
 				94AA1FFB27D8073500B58D43 /* Main.storyboard */,
 				94D6890627D86F0F00EEA71A /* Media */,
 				94AA200127D8073600B58D43 /* Assets.xcassets */,
@@ -340,8 +346,10 @@
 				94C8E58327D8174B00CF3B25 /* LoginViewController.swift in Sources */,
 				94C8E58127D8173900CF3B25 /* SignUpViewController.swift in Sources */,
 				94C8E57F27D8172B00CF3B25 /* HomeViewController.swift in Sources */,
+				2FC89DDC2804DBAD00B0E001 /* CreateEventVC.swift in Sources */,
 				94AA1FFA27D8073500B58D43 /* ViewController.swift in Sources */,
 				94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */,
+				2FC89DDE2804DBD600B0E001 /* EventDetailsVC.swift in Sources */,
 				94AA1FF827D8073500B58D43 /* SceneDelegate.swift in Sources */,
 				94AA200027D8073500B58D43 /* Team_Bravo.xcdatamodeld in Sources */,
 				94D6890527D855ED00EEA71A /* Constants.swift in Sources */,

@@ -39,10 +39,9 @@ class LoginViewController: UIViewController {
         errorLabel.alpha = 1
     }
     func transitionToHome() {
-        
-        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
-        
-        view.window?.rootViewController = homeViewController
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as! HomeViewController
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        view.window?.rootViewController = navigationController
         view.window?.makeKeyAndVisible()
     }
     
