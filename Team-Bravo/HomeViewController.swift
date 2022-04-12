@@ -15,16 +15,15 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func transitionToBuyers() {
+    func transitionToSellers() {
         let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.CreateEventVC) as? CreateEventVC
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
-    func transitionToSellers() {
+    func transitionToBuyers() {
         let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.EventDetailsVC) as? EventDetailsVC
         self.navigationController?.pushViewController(vc!, animated: true)
     }
-    
     
     @IBOutlet weak var buyers: UIButton!
     @IBOutlet weak var sellers: UIButton!
@@ -37,7 +36,6 @@ class HomeViewController: UIViewController {
     @IBAction func didBuyersSelected(_ sender: Any) {
         transitionToBuyers()
     }
-    
     /*
     // MARK: - Navigation
 

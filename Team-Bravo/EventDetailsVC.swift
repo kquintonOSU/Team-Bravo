@@ -32,14 +32,15 @@ class EventDetailsVC: UIViewController {
     }
     
     @IBAction func didCancelSelected(_ sender: Any) {
+//        self.Goback()
         self.navigationController?.popViewController(animated: true)
 
     }
     func Goback() {
-        if let nev = self.navigationController {
+        if let nev = self.navigationController{
             
             nev.popViewController(animated: true)
-        } else{
+        }else{
             self.dismiss(animated: true, completion: nil)
         }
     }

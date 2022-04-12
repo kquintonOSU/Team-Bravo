@@ -103,12 +103,12 @@ class CreateEventVC: UIViewController {
         if(self.mode == UIDatePicker.Mode.time){
             dateFormatter.dateStyle = .none
             dateFormatter.timeStyle = .medium
-            if ( type == 1) {
+            if( type == 1){
                 //Starting Time
                 if let date = sender?.date {
                     self.tfStartTime.text = "\(dateFormatter.string(from: date))"
                 }
-            } else {
+            }else{
                 //Ending Time
                 if let date = sender?.date {
                     self.tfEndTime.text = "\(dateFormatter.string(from: date))"
@@ -246,4 +246,3 @@ extension CreateEventVC: UITextFieldDelegate {
         return true
     }
 }
-
