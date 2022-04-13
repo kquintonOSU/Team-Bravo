@@ -215,8 +215,16 @@ class CreateEventVC: UIViewController {
     
     func submitEventToFirebase(){
         let db = Firestore.firestore()
+        let eventName = self.tfEventNanme.text!
+        let eventDescription = self.tfDescriptionn.text!
+        let startDate = self.tfStartDate.text!
+        let startTime = self.tfStartTime.text!
+        let endDate = self.tfEndDate.text!
+        let endTime = self.tfEndTime.text!
+        let location = self.tfLocationDetails.text!
         
-        db.collection("events").addDocument(data: ["event_name" : tfEventNanme.text, "event_description" : tfDescriptionn.text,"start_date" : tfStartDate.text, "start_time" : tfStartTime.text,"end_date" : tfEndDate.text, "end_time" : tfEndTime.text, "location" : tfLocationDetails.text ]) { error in
+        var ref: DocumentReference? = nil
+        ref = db.collection("events").addDocument(data: ["event_name" : eventName, "event_description" : eventDescription, "start_date" : startDate, "start_time" : startTime, "end_date" : endDate, "end_time" : endTime, "location" : location]) { error in
             if error != nil {
                 self.showToast(message: "Error while saving Event!", font: .systemFont(ofSize: 12.0))
             }else{
