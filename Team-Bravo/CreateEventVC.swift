@@ -222,9 +222,10 @@ class CreateEventVC: UIViewController {
         let endDate = self.tfEndDate.text!
         let endTime = self.tfEndTime.text!
         let location = self.tfLocationDetails.text!
+        let creator = Auth.auth().currentUser?.uid
         
         var ref: DocumentReference? = nil
-        ref = db.collection("events").addDocument(data: ["event_name" : eventName, "event_description" : eventDescription, "start_date" : startDate, "start_time" : startTime, "end_date" : endDate, "end_time" : endTime, "location" : location]) { error in
+        ref = db.collection("events").addDocument(data: ["event_name" : eventName, "event_description" : eventDescription, "start_date" : startDate, "start_time" : startTime, "end_date" : endDate, "end_time" : endTime, "location" : location, "creater" : creator]) { error in
             if error != nil {
                 self.showToast(message: "Error while saving Event!", font: .systemFont(ofSize: 12.0))
             }else{

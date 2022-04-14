@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
+//    let user = Auth.auth().currentUser?.displayName
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        welcomeLabel.text = "Welcome to Reserva"
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +32,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var buyers: UIButton!
     @IBOutlet weak var sellers: UIButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     
     @IBAction func didSellersSelected(_ sender: Any) {

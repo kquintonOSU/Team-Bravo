@@ -68,7 +68,7 @@
         <!--Login View Controller-->
         <scene sceneID="Lgk-To-TAu">
             <objects>
-                <viewController id="Gvm-KT-Jc9" customClass="LoginViewController" customModule="Team_Bravo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="Gvm-KT-Jc9" customClass="LoginViewController" customModule="Team_Bravo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5vH-nB-GGa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="jcr-dc-AvL">
             <objects>
-                <viewController id="1Va-ar-3zb" customClass="SignUpViewController" customModule="Team_Bravo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" id="1Va-ar-3zb" customClass="SignUpViewController" customModule="Team_Bravo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="48F-1g-Igw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,6 +254,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J7j-n8-HCt"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="HHq-CM-Nnf" id="bTA-n1-Nht"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYn-64-COP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
