@@ -58,11 +58,11 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 1
     }
     
-    func transitionToHome() {
+    func transitionToLogin() {
         
-        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        let loginViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.loginViewController) as? LoginViewController
         
-        view.window?.rootViewController = homeViewController
+        view.window?.rootViewController = loginViewController
         view.window?.makeKeyAndVisible()
     }
     
@@ -76,6 +76,7 @@ class SignUpViewController: UIViewController {
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let displayName = firstName
             
             Auth.auth().createUser(withEmail: email, password: password) { result, err in
                 if err != nil {
@@ -84,12 +85,12 @@ class SignUpViewController: UIViewController {
                 else {
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["firstname" : firstName, "lastname" : lastName, "uid" : result!.user.uid]) { error in
+                    db.collection("users").addDocument(data: ["firstname" : firstName, "lastname" : lastName, "uid" : result!.user.uid, "displayName" : displayName]) { error in
                         if error != nil {
                             self.showError("Error saving user data")
                         }
                     }
-                    self.transitionToHome()
+                    self.transitionToLogin()
                 }
             }
         }
