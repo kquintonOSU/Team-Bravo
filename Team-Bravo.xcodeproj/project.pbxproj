@@ -12,6 +12,7 @@
 		3639E44928076874000A7D10 /* ViewEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3639E44828076874000A7D10 /* ViewEventsViewController.swift */; };
 		3639E44C28077361000A7D10 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3639E44A28077361000A7D10 /* CustomTableViewCell.swift */; };
 		3639E44D28077361000A7D10 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3639E44B28077361000A7D10 /* CustomTableViewCell.xib */; };
+		3639E4512809FE75000A7D10 /* PastEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3639E4502809FE74000A7D10 /* PastEventTableViewController.swift */; };
 		940606E127E93DE400734F35 /* example3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 940606E027E93DE400734F35 /* example3.mp4 */; };
 		94828DF627D82F57009A521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AA1FFB27D8073500B58D43 /* Main.storyboard */; };
 		94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA1FF527D8073500B58D43 /* AppDelegate.swift */; };
@@ -67,6 +68,7 @@
 		3639E44828076874000A7D10 /* ViewEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventsViewController.swift; sourceTree = "<group>"; };
 		3639E44A28077361000A7D10 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3639E44B28077361000A7D10 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		3639E4502809FE74000A7D10 /* PastEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventTableViewController.swift; sourceTree = "<group>"; };
 		940606E027E93DE400734F35 /* example3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example3.mp4; sourceTree = "<group>"; };
 		94AA1FF227D8073500B58D43 /* Team-Bravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team-Bravo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AA1FF527D8073500B58D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */,
 				2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */,
 				94AA1FFB27D8073500B58D43 /* Main.storyboard */,
+				3639E4502809FE74000A7D10 /* PastEventTableViewController.swift */,
 				3639E44A28077361000A7D10 /* CustomTableViewCell.swift */,
 				3639E44B28077361000A7D10 /* CustomTableViewCell.xib */,
 				3639E44828076874000A7D10 /* ViewEventsViewController.swift */,
@@ -360,6 +363,7 @@
 				94AA1FFA27D8073500B58D43 /* ViewController.swift in Sources */,
 				3639E44928076874000A7D10 /* ViewEventsViewController.swift in Sources */,
 				3639E44C28077361000A7D10 /* CustomTableViewCell.swift in Sources */,
+				3639E4512809FE75000A7D10 /* PastEventTableViewController.swift in Sources */,
 				94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */,
 				2FC89DDE2804DBD600B0E001 /* EventDetailsVC.swift in Sources */,
 				94AA1FF827D8073500B58D43 /* SceneDelegate.swift in Sources */,

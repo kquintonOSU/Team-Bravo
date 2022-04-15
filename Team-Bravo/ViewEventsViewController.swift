@@ -8,8 +8,20 @@
 import UIKit
 import Firebase
 
+public struct FirebaseEvent: Identifiable{
+    public var id: String = UUID().uuidString
+    var end_date: String
+    var end_time: String
+    var event_description: String
+    var event_name: String
+    var location: String
+    var start_date: String
+    var start_time: String
+}
+
 class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
+    @IBOutlet weak var viewPastEventButton: UIButton!
     @IBOutlet weak var eventsTableView: UITableView!
     // MARK: - Welcome
     struct Welcome: Decodable {
@@ -27,24 +39,12 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         var end_time: String
         var location: String
     }
-    
-    
-    
-    struct FirebaseEvent: Identifiable{
-        var id: String = UUID().uuidString
-        var end_date: String
-        var end_time: String
-        var event_description: String
-        var event_name: String
-        var location: String
-        var start_date: String
-        var start_time: String
-    }
 
     var firebasedata = [FirebaseEvent]()
     
     var pastEvents = [FirebaseEvent]()
-    
+    var upcomingEvents = [FirebaseEvent]()
+
     var eventsList = [Event]()
     var results = [(String, String)]()
     
@@ -72,8 +72,37 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         eventsTableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
+        
+        //createUpcomingAndPastEventsList()
+        
+        
 
         // Do any additional setup after loading the view.
+        
+        
+    }
+    
+    
+    @IBAction func didPastEventsSelected(_ sender: UIButton) {
+        print("Past Events Pressed")
+        //transitionToPastEvents()
+    }
+    
+    
+    func createUpcomingAndPastEventsList(){
+        let now = Date().addingTimeInterval(-17100)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy h:mm:ss a"
+        for document in firebasedata{
+            let startDateTime = document.start_date + " " + document.start_time//"Apr 16, 2022 3:41:48 PM"
+            let datecomponents = dateFormatter.date(from: startDateTime)!
+            if datecomponents > now{
+                upcomingEvents.append(document)
+            }else{
+                pastEvents.append(document)
+            }
+        }
+                    
     }
     
     func fetchDataFromFirebase(comp: @escaping ([FirebaseEvent])->()){
@@ -83,7 +112,10 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
                 print("No Documents")
                 return
             }
-            self.firebasedata = documents.map{(queryDocumentSnapshot) -> FirebaseEvent in
+            
+            var localFirebaseData = [FirebaseEvent]()
+            
+            localFirebaseData = documents.map{(queryDocumentSnapshot) -> FirebaseEvent in
                 let data = queryDocumentSnapshot.data()
                 
                 let end_date_ = data["end_date"] as? String ?? ""
@@ -93,15 +125,25 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
                 let location_ = data["location"] as? String ?? ""
                 let start_date_ = data["start_date"] as? String ?? ""
                 let start_time_ = data["start_time"] as? String ?? ""
-                //print("********* ", event_name_, " - ", event_description_, " - ", location_)
-                
-                
-                
+                print("********* ", event_name_, " - ", end_date_, " - ", end_time_)
                 
                 return FirebaseEvent(end_date: end_date_, end_time: end_time_, event_description: event_description_, event_name: event_name_, location: location_, start_date: start_date_, start_time: start_time_)
             }
             
-            comp(self.firebasedata)
+            let now = Date().addingTimeInterval(-17100)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, yyyy h:mm:ss a"
+            for document in localFirebaseData{
+                let startDateTime = document.start_date + " " + document.start_time//"Apr 16, 2022 3:41:48 PM"
+                let datecomponents = dateFormatter.date(from: startDateTime)!
+                if datecomponents > now{
+                    self.upcomingEvents.append(document)
+                }else{
+                    self.pastEvents.append(document)
+                }
+            }
+            
+            comp(localFirebaseData)
         }
     }
     
@@ -129,7 +171,6 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
                 print("No data received")
                 return
             }
-            var resultLocal: [(String, String)] = []
             do {
                 // Decoding the JSON response in the JSONResponse structure.
                 let jsonResponse = try JSONDecoder().decode(Welcome.self,
@@ -159,7 +200,7 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
      */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return eventsList.count
-        return firebasedata.count
+        return upcomingEvents.count
     }
     
     // This will load the each element on to the table veiw and will reuse the cell if it goes out of screen.
@@ -170,7 +211,7 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
 //        let cellData = eventsList[indexPath[1]]
 //        let eventTime = cellData.start_time + " - " + cellData.end_time
 //        cell.configure(eventName_: cellData.description, eventTime_: eventTime, month_: "APR", date_: cellData.date)
-        let data = firebasedata[indexPath[1]]
+        let data = upcomingEvents[indexPath[1]]
         let st_time_sep = data.start_time.split(separator: ":")
         let st_time = st_time_sep[0] + ":" + st_time_sep[1] + " " + st_time_sep[2].split(separator: " ")[1]
         let end_time_sep = data.end_time.split(separator: ":")
@@ -179,18 +220,6 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         let st_date = data.start_date.split(separator: " ")
         let month = st_date[0].uppercased()
         let date = st_date[1].replacingOccurrences(of: ",", with: "")
-        
-        
-        var dateComponents = DateComponents()
-        dateComponents.year = 1980
-        dateComponents.month = 7
-        dateComponents.day = 11
-        dateComponents.timeZone = TimeZone(abbreviation: "JST") // Japan Standard Time
-        dateComponents.hour = 8
-        dateComponents.minute = 34
-
-        print(dateComponents.date)
-
 
         cell.configure(eventName_: data.event_name, eventTime_: eventTime, month_: month, date_: date)
         
@@ -202,11 +231,13 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         return 75
     }
     
-    
-    
-    
-    
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? PastEventTableViewController {
+            //dest.section_ = indexPath[0]
+            dest.firebasedata = pastEvents
+        }
+    }
+
     
 }
 

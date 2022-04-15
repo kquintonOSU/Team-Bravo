@@ -642,6 +642,38 @@
             </objects>
             <point key="canvasLocation" x="4419" y="-303"/>
         </scene>
+        <!--Past Event Table View Controller-->
+        <scene sceneID="n8r-7Q-zVd">
+            <objects>
+                <tableViewController id="AUc-oh-JjY" customClass="PastEventTableViewController" customModule="Team_Bravo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="JsK-0v-NHO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reservaEventCell" id="rJI-Fa-Ur4">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rJI-Fa-Ur4" id="cSJ-KS-kQH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AUc-oh-JjY" id="ljA-wV-Tuk"/>
+                            <outlet property="delegate" destination="AUc-oh-JjY" id="iFN-er-rKg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="FLC-qk-VMI"/>
+                    <connections>
+                        <outlet property="TV" destination="JsK-0v-NHO" id="8qC-Cj-YLP"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qsh-2l-Za7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5190" y="1047"/>
+        </scene>
         <!--View Events View Controller-->
         <scene sceneID="gMU-zk-kjH">
             <objects>
@@ -658,7 +690,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HSP-0o-jhA">
-                                <rect key="frame" x="20" y="147" width="374" height="715"/>
+                                <rect key="frame" x="20" y="147" width="374" height="676"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -688,6 +720,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TF-gL-oBu">
+                                <rect key="frame" x="20" y="831" width="374" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="View Past Events"/>
+                                <connections>
+                                    <action selector="didPastEventsSelected:" destination="7SI-ig-HLZ" eventType="touchUpInside" id="2l0-02-B59"/>
+                                    <segue destination="AUc-oh-JjY" kind="show" id="h1T-vZ-GXm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wtH-4B-Jfe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -695,11 +737,12 @@
                     <navigationItem key="navigationItem" id="A5y-aY-ltY"/>
                     <connections>
                         <outlet property="eventsTableView" destination="HSP-0o-jhA" id="yOb-wU-iJv"/>
+                        <outlet property="viewPastEventButton" destination="5TF-gL-oBu" id="0xk-oh-cJ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KD3-lr-EdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5295.652173913044" y="-303.34821428571428"/>
+            <point key="canvasLocation" x="4418.840579710145" y="379.6875"/>
         </scene>
         <!--Event DetailsVC-->
         <scene sceneID="uIL-vL-zKi">
@@ -998,7 +1041,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgD-qk-3en" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4419" y="380"/>
+            <point key="canvasLocation" x="5191" y="380"/>
         </scene>
     </scenes>
     <resources>
