@@ -8,8 +8,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var firebaseID: String = ""
 
     override func viewDidLoad() {
+        print("\n==******== Firebase ID passed to HOMEVIEWCONTROLLER: ", firebaseID)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -21,8 +24,10 @@ class HomeViewController: UIViewController {
     }
     
     func transitionToBuyers() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.EventDetailsVC) as? EventDetailsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.ViewEventsViewController) as? ViewEventsViewController
         self.navigationController?.pushViewController(vc!, animated: true)
+        //let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.EventDetailsVC) as? EventDetailsVC
+        //self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBOutlet weak var buyers: UIButton!

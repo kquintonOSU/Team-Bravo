@@ -9,6 +9,8 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    
+    var firebaseID: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,9 @@ class LoginViewController: UIViewController {
     }
     func transitionToHome() {
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as! HomeViewController
+        
+        homeViewController.firebaseID = firebaseID
+
         let navigationController = UINavigationController(rootViewController: homeViewController)
         view.window?.rootViewController = navigationController
         view.window?.makeKeyAndVisible()
@@ -55,7 +60,8 @@ class LoginViewController: UIViewController {
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                
+                self.firebaseID = result?.user.uid ?? "UID ERROR"
+                //print("***** UID: ", result?.user.uid ?? "NO UID")
                 if error != nil {
                     self.errorLabel.text = error!.localizedDescription
                     self.errorLabel.alpha = 1

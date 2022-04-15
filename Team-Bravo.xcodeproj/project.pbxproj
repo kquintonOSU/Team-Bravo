@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2FC89DDC2804DBAD00B0E001 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */; };
 		2FC89DDE2804DBD600B0E001 /* EventDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */; };
+		3639E44928076874000A7D10 /* ViewEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3639E44828076874000A7D10 /* ViewEventsViewController.swift */; };
+		3639E44C28077361000A7D10 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3639E44A28077361000A7D10 /* CustomTableViewCell.swift */; };
+		3639E44D28077361000A7D10 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3639E44B28077361000A7D10 /* CustomTableViewCell.xib */; };
 		940606E127E93DE400734F35 /* example3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 940606E027E93DE400734F35 /* example3.mp4 */; };
 		94828DF627D82F57009A521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AA1FFB27D8073500B58D43 /* Main.storyboard */; };
 		94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA1FF527D8073500B58D43 /* AppDelegate.swift */; };
@@ -61,6 +64,9 @@
 /* Begin PBXFileReference section */
 		2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
 		2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
+		3639E44828076874000A7D10 /* ViewEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEventsViewController.swift; sourceTree = "<group>"; };
+		3639E44A28077361000A7D10 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		3639E44B28077361000A7D10 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		940606E027E93DE400734F35 /* example3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example3.mp4; sourceTree = "<group>"; };
 		94AA1FF227D8073500B58D43 /* Team-Bravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team-Bravo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AA1FF527D8073500B58D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 				2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */,
 				2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */,
 				94AA1FFB27D8073500B58D43 /* Main.storyboard */,
+				3639E44A28077361000A7D10 /* CustomTableViewCell.swift */,
+				3639E44B28077361000A7D10 /* CustomTableViewCell.xib */,
+				3639E44828076874000A7D10 /* ViewEventsViewController.swift */,
 				94D6890627D86F0F00EEA71A /* Media */,
 				94AA200127D8073600B58D43 /* Assets.xcassets */,
 				94AA200327D8073600B58D43 /* LaunchScreen.storyboard */,
@@ -314,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94D6890827D86F4600EEA71A /* example.mp4 in Resources */,
+				3639E44D28077361000A7D10 /* CustomTableViewCell.xib in Resources */,
 				94AA200527D8073600B58D43 /* LaunchScreen.storyboard in Resources */,
 				94AA202927D8074900B58D43 /* GoogleService-Info.plist in Resources */,
 				94AA200227D8073600B58D43 /* Assets.xcassets in Resources */,
@@ -348,6 +358,8 @@
 				94C8E57F27D8172B00CF3B25 /* HomeViewController.swift in Sources */,
 				2FC89DDC2804DBAD00B0E001 /* CreateEventVC.swift in Sources */,
 				94AA1FFA27D8073500B58D43 /* ViewController.swift in Sources */,
+				3639E44928076874000A7D10 /* ViewEventsViewController.swift in Sources */,
+				3639E44C28077361000A7D10 /* CustomTableViewCell.swift in Sources */,
 				94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */,
 				2FC89DDE2804DBD600B0E001 /* EventDetailsVC.swift in Sources */,
 				94AA1FF827D8073500B58D43 /* SceneDelegate.swift in Sources */,
