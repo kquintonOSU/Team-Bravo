@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
         //once we complete this, we can add styling and some things prof mentioned.
     }
     
+    @IBOutlet weak var myEvents: UIButton!
     @IBOutlet weak var buyers: UIButton!
     @IBOutlet weak var sellers: UIButton!
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -46,6 +47,11 @@ class HomeViewController: UIViewController {
 
     @IBAction func didBuyersSelected(_ sender: Any) {
         transitionToBuyers()
+    }
+    
+    @IBAction func didMyEventsSelected(_ sender: Any) {
+        //transitionToMyEvents
+        //statistics for logged in users posted events
     }
     /*
     // MARK: - Navigation
