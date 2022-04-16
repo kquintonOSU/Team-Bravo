@@ -227,7 +227,7 @@
                                 <rect key="frame" x="20" y="561" width="185" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Buyers">
+                                <buttonConfiguration key="configuration" style="plain" title="View Events">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -238,7 +238,7 @@
                                 <rect key="frame" x="209" y="561" width="185" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sellers">
+                                <buttonConfiguration key="configuration" style="plain" title="Create Events">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
                                 <connections>
