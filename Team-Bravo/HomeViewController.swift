@@ -26,6 +26,9 @@ class HomeViewController: UIViewController {
     }
     
     func transitionToBuyers() {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.ViewEventsViewController) as? ViewEventsViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
         //transition to event table view controller of a list of all events in the database.
         //tapping on an event on the table view will show the corresponding event details.
         //this is the last thing to complete to have a "functioning" app.
