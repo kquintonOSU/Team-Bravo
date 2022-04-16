@@ -52,6 +52,7 @@ class HomeViewController: UIViewController {
     @IBAction func didMyEventsSelected(_ sender: Any) {
         //transitionToMyEvents
         //statistics for logged in users posted events
+        //we are almost done
     }
     /*
     // MARK: - Navigation
