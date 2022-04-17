@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reserva logo" translatesAutoresizingMaskIntoConstraints="NO" id="VAe-rN-AnW">
-                                <rect key="frame" x="275" y="48" width="99" height="99"/>
+                                <rect key="frame" x="275" y="51" width="99" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="to your account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSQ-Xr-GfV">
@@ -399,8 +399,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydK-xV-VjW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydK-xV-VjW">
+                                <rect key="frame" x="0.0" y="141" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EA9-cz-2WQ">
                                         <rect key="frame" x="0.0" y="10" width="414" height="106"/>
@@ -624,33 +624,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGT-cu-rnS">
                                         <rect key="frame" x="0.0" y="600" width="414" height="87"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MX-AZ-co2">
-                                                <rect key="frame" x="16" y="16" width="120" height="55"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="GgE-NN-qkZ"/>
-                                                    <constraint firstAttribute="height" constant="55" id="zNZ-Wj-EFx"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="SUBMIT" cornerStyle="medium">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <integer key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="didSubmitSelected:" destination="5y2-CA-1so" eventType="touchUpInside" id="fuN-n2-ORh"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Rk-xVG">
                                                 <rect key="frame" x="278" y="16" width="120" height="55"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -677,6 +650,33 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="didCancelSelected:" destination="5y2-CA-1so" eventType="touchUpInside" id="458-gc-Tmx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MX-AZ-co2">
+                                                <rect key="frame" x="47" y="16" width="120" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="GgE-NN-qkZ"/>
+                                                    <constraint firstAttribute="height" constant="55" id="zNZ-Wj-EFx"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="SUBMIT" cornerStyle="medium">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didSubmitSelected:" destination="5y2-CA-1so" eventType="touchUpInside" id="fuN-n2-ORh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -713,6 +713,10 @@
                                     <constraint firstAttribute="trailing" secondItem="lrd-Jg-HYa" secondAttribute="trailing" id="tPF-CK-VQE"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reserva logo" translatesAutoresizingMaskIntoConstraints="NO" id="H8G-Gt-nEi">
+                                <rect key="frame" x="275" y="51" width="99" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gQc-k9-PqT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -736,7 +740,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7C-3h-emb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3551" y="-277"/>
+            <point key="canvasLocation" x="3550.7246376811595" y="-277.23214285714283"/>
         </scene>
         <!--Event DetailsVC-->
         <scene sceneID="uIL-vL-zKi">
@@ -746,8 +750,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eZ-FR-RDF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4eZ-FR-RDF">
+                                <rect key="frame" x="0.0" y="151" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FA5-O6-8Vr">
                                         <rect key="frame" x="0.0" y="10" width="414" height="106"/>
@@ -1011,6 +1015,10 @@
                                     <constraint firstItem="uWr-yC-cR7" firstAttribute="top" secondItem="ob8-zt-aIJ" secondAttribute="bottom" constant="12" id="zk0-Lp-8fl"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reserva logo" translatesAutoresizingMaskIntoConstraints="NO" id="by4-wK-Ub1">
+                                <rect key="frame" x="275" y="51" width="99" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C3B-zD-Ni7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
