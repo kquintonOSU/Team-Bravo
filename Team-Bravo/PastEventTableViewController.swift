@@ -43,13 +43,13 @@ class PastEventTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as! CustomTableViewCell
-
         let data = firebasedata[indexPath[1]]
         let st_time_sep = data.start_time.split(separator: ":")
-        let st_time = st_time_sep[0] + ":" + st_time_sep[1] + " " + st_time_sep[2].split(separator: " ")[1]
+        let st_time = st_time_sep[0] + ":" + st_time_sep[1] + " "
         let end_time_sep = data.end_time.split(separator: ":")
-        let end_time = end_time_sep[0] + ":" + end_time_sep[1] + " " + end_time_sep[2].split(separator: " ")[1]
+        let end_time = end_time_sep[0] + ":" + end_time_sep[1] + " "
         let eventTime = st_time + " - " + end_time
         let st_date = data.start_date.split(separator: " ")
         let month = st_date[0].uppercased()
