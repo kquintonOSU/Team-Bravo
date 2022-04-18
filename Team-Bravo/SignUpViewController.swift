@@ -47,7 +47,7 @@ class SignUpViewController: UIViewController {
         let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if isPasswordValid(cleanedPassword) == false {
-            return "Invalid password"
+            return "Password must be 8 characters long and include letters, numbers and special character"
         }
         
         return nil
@@ -80,7 +80,7 @@ class SignUpViewController: UIViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { result, err in
                 if err != nil {
-                    self.showError("Error creating user")
+                    self.showError("Email already exists")
                 }
                 else {
                     let db = Firestore.firestore()
