@@ -52,20 +52,24 @@ class CreateEventVC: UIViewController {
     
     
     @IBAction func didSelectStartDate(_ sender: Any) {
-        showDateAndTimePicker( mode: UIDatePicker.Mode.date)
         type = 1
+        showDateAndTimePicker( mode: UIDatePicker.Mode.date)
+      
     }
     @IBAction func didSelectStartTime(_ sender: Any) {
-        showDateAndTimePicker(mode: UIDatePicker.Mode.time)
         type = 1
+        showDateAndTimePicker(mode: UIDatePicker.Mode.time)
+      
     }
     @IBAction func didSelectEndDate(_ sender: Any) {
-        showDateAndTimePicker(mode: UIDatePicker.Mode.date)
         type = 2
+        showDateAndTimePicker(mode: UIDatePicker.Mode.date)
+       
     }
     @IBAction func didSelectEndTime(_ sender: Any) {
-        showDateAndTimePicker(mode: UIDatePicker.Mode.time)
         type = 2
+        showDateAndTimePicker(mode: UIDatePicker.Mode.time)
+       
     }
     
     func showDateAndTimePicker(mode : UIDatePicker.Mode){
@@ -80,22 +84,32 @@ class CreateEventVC: UIViewController {
         datePicker.datePickerMode = mode
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = .current
+      
+            if type == 1{
+                datePicker.minimumDate = Date()
+            }else{
+                datePicker.minimumDate = self.startTime
+                
+            }
         
+
         datePicker.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
         datePicker.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
         datePicker.backgroundColor = UIColor.white
         self.view.addSubview(datePicker)
         
         toolBar = UIToolbar(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
-        toolBar.barStyle = .blackTranslucent
+        toolBar.barStyle = .black
         toolBar.items = [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.onDoneButtonClick))]
         toolBar.backgroundColor = UIColor.white
         toolBar.sizeToFit()
         self.view.addSubview(toolBar)
     }
-    
+    var startTime = Date()
     @objc func dateChanged(_ sender: UIDatePicker?) {
         let dateFormatter = DateFormatter()
+       
+
         if let date = sender?.date {
             print("Picked the date \(dateFormatter.string(from: date))")
         }
@@ -105,11 +119,14 @@ class CreateEventVC: UIViewController {
             dateFormatter.timeStyle = .medium
             if( type == 1){
                 //Starting Time
+                self.startTime = datePicker.date
+                dateFormatter.dateFormat = "h:mm a"
                 if let date = sender?.date {
                     self.tfStartTime.text = "\(dateFormatter.string(from: date))"
                 }
             }else{
                 //Ending Time
+                dateFormatter.dateFormat = "h:mm a"
                 if let date = sender?.date {
                     self.tfEndTime.text = "\(dateFormatter.string(from: date))"
                 }
@@ -119,11 +136,15 @@ class CreateEventVC: UIViewController {
             dateFormatter.timeStyle = .none
             if( type == 1){
                 //Starting Date
+                self.startTime = datePicker.date
+
+//                dateFormatter.dateFormat = "MM/dd/yyyy"
                 if let date = sender?.date {
                     self.tfStartDate.text = "\(dateFormatter.string(from: date))"
                 }
             }else{
                 //Ending Date
+//                dateFormatter.dateFormat = "MM/dd/yyyy"
                 if let date = sender?.date {
                     self.tfEndDate.text = "\(dateFormatter.string(from: date))"
                 }
@@ -139,16 +160,13 @@ class CreateEventVC: UIViewController {
     
     
     func Goback() {
-        self.view.removeFromSuperview()
         if let nev = self.navigationController{
             
             nev.popViewController(animated: true)
         }else{
             self.dismiss(animated: true, completion: nil)
-            
         }
     }
-    
     
     func validation() -> Bool {
         if(tfEventNanme.text == ""){
@@ -171,7 +189,6 @@ class CreateEventVC: UIViewController {
             return false
         }
         
-        
         if(tfEndDate.text == ""){
             self.showToast(message: "Event Ending Date is required!", font: .systemFont(ofSize: 12.0))
             return false
@@ -182,21 +199,17 @@ class CreateEventVC: UIViewController {
             return false
         }
         
-        
         if(tfLocationDetails.text == ""){
             self.showToast(message: "Event Location details is required!", font: .systemFont(ofSize: 12.0))
             return false
         }
         
-        
-        
         return true
     }
     
-    
     func showToast(message : String, font: UIFont) {
         
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        let toastLabel = UILabel(frame: CGRect(x: 40, y: self.view.frame.size.height-100, width: (view.frame.size.width - 80), height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.font = font
@@ -215,26 +228,17 @@ class CreateEventVC: UIViewController {
     
     func submitEventToFirebase(){
         let db = Firestore.firestore()
-        let eventName = self.tfEventNanme.text!
-        let eventDescription = self.tfDescriptionn.text!
-        let startDate = self.tfStartDate.text!
-        let startTime = self.tfStartTime.text!
-        let endDate = self.tfEndDate.text!
-        let endTime = self.tfEndTime.text!
-        let location = self.tfLocationDetails.text!
-        let creator = Auth.auth().currentUser?.uid
-        
-        var ref: DocumentReference? = nil
-        ref = db.collection("events").addDocument(data: ["event_name" : eventName, "event_description" : eventDescription, "start_date" : startDate, "start_time" : startTime, "end_date" : endDate, "end_time" : endTime, "location" : location, "creater" : creator]) { error in
+        db.collection("events").addDocument(data: ["event_name" : self.tfEventNanme.text!, "event_description" : self.tfDescriptionn.text!,"start_date" : self.tfStartDate.text!, "start_time" : self.tfStartTime.text!,"end_date" : self.tfEndDate.text!, "end_time" : self.tfEndTime.text!, "location" : self.tfLocationDetails.text!, "number_of_bookings" : 0 ]) { error in
             if error != nil {
                 self.showToast(message: "Error while saving Event!", font: .systemFont(ofSize: 12.0))
             }else{
                 self.showToast(message: "Event Created Successfully!", font: .systemFont(ofSize: 12.0))
+                if let navController = self.navigationController {
+                    navController.popViewController(animated: true)
+                }
             }
         }
     }
-    
-
     
     /*
      // MARK: - Navigation
@@ -245,7 +249,6 @@ class CreateEventVC: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
 }
 
 

@@ -4,7 +4,6 @@
 //
 //  Created by Abdulla Karjikar on 4/13/22.
 //
-
 import UIKit
 import Firebase
 
@@ -17,6 +16,7 @@ public struct FirebaseEvent: Identifiable{
     var location: String
     var start_date: String
     var start_time: String
+    var number_of_bookings : Int
 }
 
 class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -82,7 +82,7 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
-    
+
     @IBAction func didPastEventsSelected(_ sender: UIButton) {
         print("Past Events Pressed")
         //transitionToPastEvents()
@@ -92,7 +92,7 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
     func createUpcomingAndPastEventsList(){
         let now = Date().addingTimeInterval(-17100)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, yyyy h:mm:ss a"
+        dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
         for document in firebasedata{
             let startDateTime = document.start_date + " " + document.start_time//"Apr 16, 2022 3:41:48 PM"
             let datecomponents = dateFormatter.date(from: startDateTime)!
@@ -125,14 +125,15 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
                 let location_ = data["location"] as? String ?? ""
                 let start_date_ = data["start_date"] as? String ?? ""
                 let start_time_ = data["start_time"] as? String ?? ""
+                let number_of_bookings_ = data["number_of_bookings"] as? Int ?? 0
                 print("********* ", event_name_, " - ", end_date_, " - ", end_time_)
                 
-                return FirebaseEvent(end_date: end_date_, end_time: end_time_, event_description: event_description_, event_name: event_name_, location: location_, start_date: start_date_, start_time: start_time_)
+                return FirebaseEvent(end_date: end_date_, end_time: end_time_, event_description: event_description_, event_name: event_name_, location: location_, start_date: start_date_, start_time: start_time_, number_of_bookings: number_of_bookings_)
             }
             
             let now = Date().addingTimeInterval(-17100)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM d, yyyy h:mm:ss a"
+            dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
             for document in localFirebaseData{
                 let startDateTime = document.start_date + " " + document.start_time//"Apr 16, 2022 3:41:48 PM"
                 let datecomponents = dateFormatter.date(from: startDateTime)!
@@ -213,9 +214,9 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
 //        cell.configure(eventName_: cellData.description, eventTime_: eventTime, month_: "APR", date_: cellData.date)
         let data = upcomingEvents[indexPath[1]]
         let st_time_sep = data.start_time.split(separator: ":")
-        let st_time = st_time_sep[0] + ":" + st_time_sep[1] + " " + st_time_sep[2].split(separator: " ")[1]
+        let st_time = st_time_sep[0] + ":" + st_time_sep[1] + ""
         let end_time_sep = data.end_time.split(separator: ":")
-        let end_time = end_time_sep[0] + ":" + end_time_sep[1] + " " + end_time_sep[2].split(separator: " ")[1]
+        let end_time = end_time_sep[0] + ":" + end_time_sep[1] + ""
         let eventTime = st_time + " - " + end_time
         let st_date = data.start_date.split(separator: " ")
         let month = st_date[0].uppercased()
@@ -230,6 +231,13 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Handling clickListener in single tableView item.
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.EventDetailsVC) as? EventDetailsVC
+        vc?.event = upcomingEvents[indexPath.row]
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? PastEventTableViewController {
@@ -237,8 +245,6 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
             dest.firebasedata = pastEvents
         }
     }
-
-    
 }
 
 
