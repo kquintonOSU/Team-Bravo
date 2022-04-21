@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
 
     var firebaseUserID = ""
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +23,7 @@ class HomeViewController: UIViewController {
     
     func transitionToSellers() {
         let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.CreateEventVC) as? CreateEventVC
+        vc?.firebaseUserID = firebaseUserID
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     

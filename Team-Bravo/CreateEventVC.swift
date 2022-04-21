@@ -11,6 +11,8 @@ import Firebase
 
 class CreateEventVC: UIViewController {
     
+    var firebaseUserID = ""
+    
     @IBOutlet weak var tfEventNanme: UITextField!
     @IBOutlet weak var tfDescriptionn: UITextField!
     @IBOutlet weak var tfStartDate: UITextField!
@@ -25,6 +27,7 @@ class CreateEventVC: UIViewController {
     var type = 1
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("CreateEventVC: ", firebaseUserID)
         tfEventNanme.delegate = self // set delegate
         tfDescriptionn.delegate = self // set delegate
         tfStartDate.delegate = self // set delegate
@@ -236,7 +239,7 @@ class CreateEventVC: UIViewController {
     func submitEventToFirebase(){
         print("UID: \(UUID().uuidString)")
         let db = Firestore.firestore()
-        db.collection("events").addDocument(data: ["id" : UUID().uuidString, "event_name" : self.tfEventNanme.text!, "event_description" : self.tfDescriptionn.text!,"start_date" : self.tfStartDate.text!, "start_time" : self.tfStartTime.text!,"end_date" : self.tfEndDate.text!, "end_time" : self.tfEndTime.text!, "location" : self.tfLocationDetails.text!, "number_of_bookings" : 0 ]) { error in
+        db.collection("events").addDocument(data: ["id" : UUID().uuidString, "event_name" : self.tfEventNanme.text!, "event_description" : self.tfDescriptionn.text!,"start_date" : self.tfStartDate.text!, "start_time" : self.tfStartTime.text!,"end_date" : self.tfEndDate.text!, "end_time" : self.tfEndTime.text!, "location" : self.tfLocationDetails.text!, "number_of_bookings" : 0, "FirebaseUserID": firebaseUserID ]) { error in
             if error != nil {
                 self.showToast(message: "Error while saving Event!", font: .systemFont(ofSize: 12.0))
             }else{
