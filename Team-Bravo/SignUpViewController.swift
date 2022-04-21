@@ -80,7 +80,7 @@ class SignUpViewController: UIViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { result, err in
                 if err != nil {
-                    self.showError("Email already exists")
+                    self.showError("Invalid email or it already exists")
                 }
                 else {
                     let db = Firestore.firestore()
