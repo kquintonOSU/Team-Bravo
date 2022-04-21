@@ -42,8 +42,8 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
 
     var firebasedata = [FirebaseEvent]()
     
-    var pastEvents = [FirebaseEvent]()
-    var upcomingEvents = [FirebaseEvent]()
+    var pastEvents = [(FirebaseEvent, Date)]()
+    var upcomingEvents = [(FirebaseEvent, Date)]()
 
     var eventsList = [Event]()
     var results = [(String, String)]()
@@ -72,7 +72,6 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         eventsTableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
-        
         eventsTableView.reloadData()
         
         //createUpcomingAndPastEventsList()
@@ -99,9 +98,9 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
             let startDateTime = document.start_date + " " + document.start_time//"Apr 16, 2022 3:41:48 PM"
             let datecomponents = dateFormatter.date(from: startDateTime)!
             if datecomponents > now{
-                upcomingEvents.append(document)
+                upcomingEvents.append((document, datecomponents))
             }else{
-                pastEvents.append(document)
+                pastEvents.append((document, datecomponents))
             }
         }
                     
@@ -155,14 +154,20 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
                     //self.upcomingEvents.append(document) //shows all events in upcoming. Need to fix below
 
                     if datecomponents > now{
-                        self.upcomingEvents.append(document)
+                        self.upcomingEvents.append((document, datecomponents))
                     }else{
-                        self.pastEvents.append(document)
+                        self.pastEvents.append((document, datecomponents))
                     }
  
                 } catch {
                     print("unable to view document")
                 }
+            }
+            self.upcomingEvents = self.upcomingEvents.sorted{
+                $0.1 < $1.1
+            }
+            self.pastEvents = self.pastEvents.sorted{
+                $0.1 > $1.1
             }
             
             comp(localFirebaseData)
@@ -234,16 +239,16 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
 //        let eventTime = cellData.start_time + " - " + cellData.end_time
 //        cell.configure(eventName_: cellData.description, eventTime_: eventTime, month_: "APR", date_: cellData.date)
         let data = upcomingEvents[indexPath[1]]
-        let st_time_sep = data.start_time.split(separator: ":")
+        let st_time_sep = data.0.start_time.split(separator: ":")
         let st_time = st_time_sep[0] + ":" + st_time_sep[1] + ""
-        let end_time_sep = data.end_time.split(separator: ":")
+        let end_time_sep = data.0.end_time.split(separator: ":")
         let end_time = end_time_sep[0] + ":" + end_time_sep[1] + ""
         let eventTime = st_time + " - " + end_time
-        let st_date = data.start_date.split(separator: " ")
+        let st_date = data.0.start_date.split(separator: " ")
         let month = st_date[0].uppercased()
         let date = st_date[1].replacingOccurrences(of: ",", with: "")
 
-        cell.configure(eventName_: data.event_name, eventTime_: eventTime, month_: month, date_: date)
+        cell.configure(eventName_: data.0.event_name, eventTime_: eventTime, month_: month, date_: date)
         
         return cell
         
@@ -256,7 +261,7 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         // Handling clickListener in single tableView item.
         
         let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.EventDetailsVC) as? EventDetailsVC
-        vc?.event = upcomingEvents[indexPath.row]
+        vc?.event = upcomingEvents[indexPath.row].0
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
