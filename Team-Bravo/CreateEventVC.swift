@@ -85,13 +85,19 @@ class CreateEventVC: UIViewController {
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = .current
       
+        if(self.mode == UIDatePicker.Mode.date){
             if type == 1{
                 datePicker.minimumDate = Date()
             }else{
                 datePicker.minimumDate = self.startTime
-                
+
             }
-        
+        }else{
+            
+            if startDate == Date(){
+                datePicker.minimumDate = Date()
+            }
+        }
 
         datePicker.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
         datePicker.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
@@ -106,6 +112,7 @@ class CreateEventVC: UIViewController {
         self.view.addSubview(toolBar)
     }
     var startTime = Date()
+    var startDate = Date()
     @objc func dateChanged(_ sender: UIDatePicker?) {
         let dateFormatter = DateFormatter()
        
@@ -137,7 +144,7 @@ class CreateEventVC: UIViewController {
             if( type == 1){
                 //Starting Date
                 self.startTime = datePicker.date
-
+                self.startDate = datePicker.date
 //                dateFormatter.dateFormat = "MM/dd/yyyy"
                 if let date = sender?.date {
                     self.tfStartDate.text = "\(dateFormatter.string(from: date))"
@@ -227,8 +234,9 @@ class CreateEventVC: UIViewController {
     }
     
     func submitEventToFirebase(){
+        print("UID: \(UUID().uuidString)")
         let db = Firestore.firestore()
-        db.collection("events").addDocument(data: ["event_name" : self.tfEventNanme.text!, "event_description" : self.tfDescriptionn.text!,"start_date" : self.tfStartDate.text!, "start_time" : self.tfStartTime.text!,"end_date" : self.tfEndDate.text!, "end_time" : self.tfEndTime.text!, "location" : self.tfLocationDetails.text!, "number_of_bookings" : 0 ]) { error in
+        db.collection("events").addDocument(data: ["id" : UUID().uuidString, "event_name" : self.tfEventNanme.text!, "event_description" : self.tfDescriptionn.text!,"start_date" : self.tfStartDate.text!, "start_time" : self.tfStartTime.text!,"end_date" : self.tfEndDate.text!, "end_time" : self.tfEndTime.text!, "location" : self.tfLocationDetails.text!, "number_of_bookings" : 0 ]) { error in
             if error != nil {
                 self.showToast(message: "Error while saving Event!", font: .systemFont(ofSize: 12.0))
             }else{

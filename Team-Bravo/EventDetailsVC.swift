@@ -33,6 +33,9 @@ class EventDetailsVC: UIViewController {
         tfEndDate.text = "\(event?.end_date ?? "")"
         tfEndTime.text = "\(event?.end_time ?? "")"
         tfLocationDetails.text = "\(event?.location ?? "")"
+        
+        tfNoOfSeats.delegate = self // set delegate
+
     }
     
     
@@ -40,8 +43,10 @@ class EventDetailsVC: UIViewController {
         self.Goback()
     }
     @IBAction func didBookSelected(_ sender: Any) {
-        if(validation()){
-            updateEventToFirebase()
+        let seats = NumberFormatter().number(from: self.tfNoOfSeats.text!) as! Int
+        let bookings = (self.event!.number_of_bookings + seats)
+        if(validation(bookings : bookings)){
+            updateEventToFirebase(bookings : bookings)
         }
     }
     
@@ -99,7 +104,7 @@ class EventDetailsVC: UIViewController {
         var location: String
     }
     
-    func validation() -> Bool {
+    func validation(bookings: Int) -> Bool {
         if(tfNoOfSeats.text == ""){
             self.showToast(message: "No of seats field is required!", font: .systemFont(ofSize: 12.0))
             return false
@@ -110,11 +115,15 @@ class EventDetailsVC: UIViewController {
             return false
         }
         
+        if( bookings > 99 ){
+            self.showToast(message: "All the seats are booked already!!", font: .systemFont(ofSize: 12.0))
+            return false
+        }
+        
         return true
     }
     
-    func updateEventToFirebase(){
-        let seats = NumberFormatter().number(from: self.tfNoOfSeats.text!) as! Int
+    func updateEventToFirebase(bookings: Int){
         let db = Firestore.firestore()
         
         db.collection("events")
@@ -126,16 +135,14 @@ class EventDetailsVC: UIViewController {
                     // Perhaps this is an error for you?
                     print( "Perhaps this is an error for you?" )
                 } else {
-                    let bookings = (self.event!.number_of_bookings + seats)
+                   
                     let document = querySnapshot!.documents.first
                     document!.reference.updateData([
                         "number_of_bookings": bookings
                     ])
                     print("Seats \(bookings)")
                     self.showToast(message: "Event Booked Successfully!", font: .systemFont(ofSize: 12.0))
-                    if let navController = self.navigationController {
-                        navController.popViewController(animated: true)
-                    }
+                    self.Goback()
                 }
             }
     }
@@ -144,7 +151,18 @@ class EventDetailsVC: UIViewController {
 
 extension EventDetailsVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder() // dismiss keyboard
-        return true
+           textField.resignFirstResponder()
+           return true
+       }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 2
     }
 }
