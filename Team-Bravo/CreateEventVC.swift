@@ -180,40 +180,76 @@ class CreateEventVC: UIViewController {
     
     func validation() -> Bool {
         if(tfEventNanme.text == ""){
-            self.showToast(message: "Event Name is required!", font: .systemFont(ofSize: 12.0))
+            //self.showToast(message: "Event Name is required!", font: .systemFont(ofSize: 12.0))
+            showAlert(message_: "Event Name is required!")
             return false
         }
         
         if(tfDescriptionn.text == ""){
-            self.showToast(message: "Event Description is required!", font: .systemFont(ofSize: 12.0))
+            //self.showToast(message: "Event Description is required!", font: .systemFont(ofSize: 12.0))
+            showAlert(message_: "Event Description is required!")
             return false
         }
         
         if(tfStartDate.text == ""){
-            self.showToast(message: "Event Starting Date is required!", font: .systemFont(ofSize: 12.0))
+            //self.showToast(message: "Event Starting Date is required!", font: .systemFont(ofSize: 12.0))
+            showAlert(message_: "Event Starting Date is required!")
             return false
         }
         
         if(tfStartTime.text == ""){
-            self.showToast(message: "Event Starting Time is required!", font: .systemFont(ofSize: 12.0))
+            //self.showToast(message: "Event Starting Time is required!", font: .systemFont(ofSize: 12.0))
+            showAlert(message_: "Event Starting Time is required!")
             return false
         }
         
         if(tfEndDate.text == ""){
-            self.showToast(message: "Event Ending Date is required!", font: .systemFont(ofSize: 12.0))
+            //self.showToast(message: "Event Ending Date is required!", font: .systemFont(ofSize: 12.0))
+            showAlert(message_: "Event Ending Date is required!")
             return false
         }
         
         if(tfEndTime.text == ""){
-            self.showToast(message: "Event Ending Time is required!", font: .systemFont(ofSize: 12.0))
+            //self.showToast(message: "Event Ending Time is required!", font: .systemFont(ofSize: 12.0))
+            showAlert(message_: "Event Ending Time is required!")
             return false
         }
         
         if(tfLocationDetails.text == ""){
-            self.showToast(message: "Event Location details is required!", font: .systemFont(ofSize: 12.0))
+            showAlert(message_: "Event Location details is required!")
+            //self.showToast(message: "Event Location details is required!", font: .systemFont(ofSize: 12.0))
             return false
         }
         
+        // Adding code to make sure end date and time is not before start data and time
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
+        let end_date_ = tfEndDate.text!//"Apr 21, 2022"
+        let end_time_d = tfEndTime.text!//"12:29 PM"
+        let end_time_seperated = end_time_d.components(separatedBy: ":")
+        let end_part = end_time_seperated[end_time_seperated.count-1].components(separatedBy: " ")
+        let end_time_ = end_time_seperated[0] + ":" + end_time_seperated[1].components(separatedBy: " ")[0] + " " + end_part[end_part.count-1]
+        let endDateTime = end_date_ + " " + end_time_
+        print("endDateTime: ", endDateTime)
+        let start_date_ = tfStartDate.text!//"Apr 21, 2022"
+        let start_time_d = tfStartTime.text!//"12:45 PM"
+        let start_time_seperated = start_time_d.components(separatedBy: ":")
+        let end_part_ = start_time_seperated[start_time_seperated.count-1].components(separatedBy: " ")
+        let start_time_ = start_time_seperated[0] + ":" + start_time_seperated[1].components(separatedBy: " ")[0] + " " + end_part_[end_part_.count-1]
+        let startDateTime = start_date_ + " " + start_time_//"Apr 16, 2022 3:41:48 PM"
+        //let datecomponents = dateFormatter.date(from: startDateTime)!
+        print("startDateTime: ", startDateTime)
+        let startDateComponent = dateFormatter.date(from: startDateTime)!
+        let endDateComponent = dateFormatter.date(from: endDateTime)!
+        if(startDateComponent > endDateComponent){
+            
+            
+            
+            //self.showToast(message: "Event end data and time cannot be earlier than start date and Time!", font: .systemFont(ofSize: 12.0))
+            showAlert(message_: "Event end data and time cannot be earlier than start date and Time!")
+            return false
+        }
         return true
     }
     
@@ -249,6 +285,12 @@ class CreateEventVC: UIViewController {
                 }
             }
         }
+    }
+    
+    func showAlert(message_: String){
+        let alert = UIAlertController(title: "Validation Error", message: message_, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        present(alert, animated: true)
     }
     
     /*
