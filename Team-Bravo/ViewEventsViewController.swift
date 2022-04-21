@@ -51,7 +51,7 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
 
 //        retrieveData{
 //            data in
@@ -72,6 +72,8 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         eventsTableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
+        
+        eventsTableView.reloadData()
         
         //createUpcomingAndPastEventsList()
         
@@ -136,11 +138,18 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
             dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
             for document in localFirebaseData{
                 let startDateTime = document.start_date + " " + document.start_time//"Apr 16, 2022 3:41:48 PM"
-                let datecomponents = dateFormatter.date(from: startDateTime)!
-                if datecomponents > now{
-                    self.upcomingEvents.append(document)
-                }else{
-                    self.pastEvents.append(document)
+                var datecomponents = dateFormatter.date(from: startDateTime)
+                do {
+                    self.upcomingEvents.append(document) //shows all events in upcoming. Need to fix below
+/*
+                    if datecomponents > now{
+                        self.upcomingEvents.append(document)
+                    }else{
+                        self.pastEvents.append(document)
+                    }
+ */
+                } catch {
+                    print("unable to view document")
                 }
             }
             
