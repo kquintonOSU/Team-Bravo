@@ -243,10 +243,6 @@ class CreateEventVC: UIViewController {
         let startDateComponent = dateFormatter.date(from: startDateTime)!
         let endDateComponent = dateFormatter.date(from: endDateTime)!
         if(startDateComponent > endDateComponent){
-            
-            
-            
-            //self.showToast(message: "Event end data and time cannot be earlier than start date and Time!", font: .systemFont(ofSize: 12.0))
             showAlert(message_: "Event end data and time cannot be earlier than start date and Time!")
             return false
         }
