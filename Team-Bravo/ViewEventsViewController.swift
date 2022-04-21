@@ -137,7 +137,7 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
                 let end_part_ = start_time_seperated[start_time_seperated.count-1].components(separatedBy: " ")
                 let start_time_ = start_time_seperated[0] + ":" + start_time_seperated[1].components(separatedBy: " ")[0] + " " + end_part_[end_part_.count-1]
                 
-                print("*****===== ", start_time_, " ** ", start_time_seperated, " ** ", end_part_)
+                //print("*****===== ", start_time_, " ** ", start_time_seperated, " ** ", end_part_)
                 
                 let number_of_bookings_ = data["number_of_bookings"] as? Int ?? 0
                 print("********* ", event_name_, " - ", end_date_, " - ", end_time_)
@@ -250,7 +250,7 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 90
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Handling clickListener in single tableView item.

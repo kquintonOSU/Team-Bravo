@@ -11,12 +11,14 @@ import Firebase
 class HomeViewController: UIViewController {
 //    let user = Auth.auth().currentUser?.displayName
 
+    var firebaseUserID = ""
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         welcomeLabel.text = "Welcome to Reserva"
+        print("======== FirebaseID: ", firebaseUserID)
         // Do any additional setup after loading the view.
     }
     
