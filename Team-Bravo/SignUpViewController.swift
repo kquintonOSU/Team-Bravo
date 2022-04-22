@@ -90,6 +90,16 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
+                    if let currentUser = Auth.auth().currentUser?.createProfileChangeRequest() {
+                          currentUser.displayName = displayName
+                          currentUser.commitChanges(completion: {error in
+                              if let error = error {
+                                  print(error)
+                              } else {
+                                  print("DisplayName changed")
+                              }
+                          })
+                      }
                     self.transitionToLogin()
                 }
             }

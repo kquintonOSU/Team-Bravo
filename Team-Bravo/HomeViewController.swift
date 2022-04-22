@@ -15,10 +15,26 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        welcomeLabel.text = "Welcome to Reserva"
+        
+        currentUserInfo()
+        
         print("======== FirebaseID: ", firebaseUserID)
         // Do any additional setup after loading the view.
+    }
+    
+    func currentUserInfo() {
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser
+            if let user = user {
+                let displayName = user.displayName
+
+                
+                welcomeLabel.text = "Welcome, \(displayName!)"
+            }
+        } else {
+            print("no user logged in")
+        }
+
     }
     
     func transitionToSellers() {
@@ -37,10 +53,10 @@ class HomeViewController: UIViewController {
         //once we complete this, we can add styling and some things prof mentioned.
     }
     
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var myEvents: UIButton!
     @IBOutlet weak var buyers: UIButton!
     @IBOutlet weak var sellers: UIButton!
-    @IBOutlet weak var welcomeLabel: UILabel!
     
     
     @IBAction func didSellersSelected(_ sender: Any) {
