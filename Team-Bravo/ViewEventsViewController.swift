@@ -91,6 +91,8 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     func createUpcomingAndPastEventsList(){
+        upcomingEvents.removeAll()
+        pastEvents.removeAll()
         let now = Date().addingTimeInterval(-17100)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy h:mm a"
@@ -110,6 +112,8 @@ class ViewEventsViewController: UIViewController, UITableViewDelegate, UITableVi
         let db = Firestore.firestore()
         firebasedata = []
         db.collection("events").addSnapshotListener{(querySnapshot, error) in
+            self.upcomingEvents.removeAll()
+            self.pastEvents.removeAll()
             guard let documents = querySnapshot?.documents else{
                 print("No Documents")
                 return
