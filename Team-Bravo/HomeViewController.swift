@@ -12,30 +12,31 @@ class HomeViewController: UIViewController {
 //    let user = Auth.auth().currentUser?.displayName
 
     var firebaseUserID = ""
+    var displayName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        currentUserInfo()
+        welcomeLabel.text = "Welcome, \(displayName)"
+        // currentUserInfo()
         
         print("======== FirebaseID: ", firebaseUserID)
         // Do any additional setup after loading the view.
     }
     
-    func currentUserInfo() {
-        if Auth.auth().currentUser != nil {
-            let user = Auth.auth().currentUser
-            if let user = user {
-                let displayName = user.displayName
-
-                
-                welcomeLabel.text = "Welcome, \(displayName!)"
-            }
-        } else {
-            print("no user logged in")
-        }
-
-    }
+//    func currentUserInfo() {
+//        if Auth.auth().currentUser != nil {
+//            let user = Auth.auth().currentUser
+//            if let user = user {
+//                let displayName = user.displayName
+//
+//
+//                welcomeLabel.text = "Welcome, \(displayName!)"
+//            }
+//        } else {
+//            print("no user logged in")
+//        }
+//
+//    }
     
     func transitionToSellers() {
         let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.CreateEventVC) as? CreateEventVC
