@@ -14,6 +14,9 @@
 		36EE590D280A62DD00E6B7D9 /* ViewEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5909280A62DD00E6B7D9 /* ViewEventsViewController.swift */; };
 		36EE590E280A62DD00E6B7D9 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EE590A280A62DD00E6B7D9 /* CustomTableViewCell.xib */; };
 		940606E127E93DE400734F35 /* example3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 940606E027E93DE400734F35 /* example3.mp4 */; };
+		94666A3C28136F3400D71322 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 94666A3B28136F3400D71322 /* SideMenu */; };
+		94666A3F28136F6200D71322 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 94666A3E28136F6200D71322 /* Charts */; };
+		94666A4128136F6200D71322 /* ChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 94666A4028136F6200D71322 /* ChartsDynamic */; };
 		94828DF627D82F57009A521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AA1FFB27D8073500B58D43 /* Main.storyboard */; };
 		94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA1FF527D8073500B58D43 /* AppDelegate.swift */; };
 		94AA1FF827D8073500B58D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA1FF727D8073500B58D43 /* SceneDelegate.swift */; };
@@ -103,11 +106,14 @@
 				94AA202C27D80ACF00B58D43 /* FirebaseAnalytics in Frameworks */,
 				94AA203027D80ACF00B58D43 /* FirebaseAuthCombine-Community in Frameworks */,
 				94AA204427D80ACF00B58D43 /* FirebaseStorageCombine-Community in Frameworks */,
+				94666A3C28136F3400D71322 /* SideMenu in Frameworks */,
 				94AA203E27D80ACF00B58D43 /* FirebaseMessaging in Frameworks */,
 				94AA203C27D80ACF00B58D43 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				94666A4128136F6200D71322 /* ChartsDynamic in Frameworks */,
 				94AA204227D80ACF00B58D43 /* FirebaseStorage in Frameworks */,
 				94AA203227D80ACF00B58D43 /* FirebaseDatabase in Frameworks */,
 				94AA203A27D80ACF00B58D43 /* FirebaseFunctions in Frameworks */,
+				94666A3F28136F6200D71322 /* Charts in Frameworks */,
 				94AA202E27D80ACF00B58D43 /* FirebaseAuth in Frameworks */,
 				94AA203427D80ACF00B58D43 /* FirebaseDynamicLinks in Frameworks */,
 				94AA203627D80ACF00B58D43 /* FirebaseFirestore in Frameworks */,
@@ -236,6 +242,9 @@
 				94AA203F27D80ACF00B58D43 /* FirebasePerformance */,
 				94AA204127D80ACF00B58D43 /* FirebaseStorage */,
 				94AA204327D80ACF00B58D43 /* FirebaseStorageCombine-Community */,
+				94666A3B28136F3400D71322 /* SideMenu */,
+				94666A3E28136F6200D71322 /* Charts */,
+				94666A4028136F6200D71322 /* ChartsDynamic */,
 			);
 			productName = "Team-Bravo";
 			productReference = 94AA1FF227D8073500B58D43 /* Team-Bravo.app */;
@@ -311,6 +320,8 @@
 			mainGroup = 94AA1FE927D8073500B58D43;
 			packageReferences = (
 				94AA202A27D80ACF00B58D43 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				94666A3A28136F3400D71322 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				94666A3D28136F6200D71322 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 94AA1FF327D8073500B58D43 /* Products */;
 			projectDirPath = "";
@@ -718,6 +729,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		94666A3A28136F3400D71322 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		94666A3D28136F6200D71322 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		94AA202A27D80ACF00B58D43 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -729,6 +756,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		94666A3B28136F3400D71322 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94666A3A28136F3400D71322 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+		94666A3E28136F6200D71322 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94666A3D28136F6200D71322 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		94666A4028136F6200D71322 /* ChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94666A3D28136F6200D71322 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = ChartsDynamic;
+		};
 		94AA202B27D80ACF00B58D43 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 94AA202A27D80ACF00B58D43 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
