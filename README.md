@@ -50,7 +50,8 @@ Dashboard -
 
 -> If an event is scheduled then below popup will be pop up.
 
-Simulator Screen Shot - iPhone 11 - 2022-04-22 at 23.32.34
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 23 39 48](https://user-images.githubusercontent.com/99898394/164877904-13f35fe6-2fcf-4d92-8e9e-b9a719fe121c.png)
+
 
 -> “View Events” will display all the current events.
 
