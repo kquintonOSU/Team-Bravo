@@ -46,6 +46,7 @@ class CreateEventVC: UIViewController {
     @IBAction func didSubmitSelected(_ sender: Any) {
         if(validation()){
             submitEventToFirebase()
+            self.Goback()
         }
     }
     
