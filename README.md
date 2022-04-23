@@ -64,6 +64,10 @@ Each event will have a BOOK option to book the tickets if the event date is a fu
 
 ![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 14 39](https://user-images.githubusercontent.com/99898394/164865543-13ba0d53-13b8-4c98-bbf1-38f6183cb8d6.png)
 
+-> "Past events" will display the events that are already done.
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 23 50 17](https://user-images.githubusercontent.com/99898394/164878193-dbb252ed-54ab-4979-b3ec-a96c91a498e7.png)
+
 
 -> “My Events” will be used for displaying the events created by the logged in user.
 
