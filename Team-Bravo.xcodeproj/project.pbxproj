@@ -45,6 +45,9 @@
 		94C8E58127D8173900CF3B25 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C8E58027D8173900CF3B25 /* SignUpViewController.swift */; };
 		94C8E58327D8174B00CF3B25 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C8E58227D8174B00CF3B25 /* LoginViewController.swift */; };
 		94D6890527D855ED00EEA71A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6890427D855ED00EEA71A /* Constants.swift */; };
+		C673D79B28139F9F0009B06F /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = C673D79A28139F9F0009B06F /* Charts */; };
+		C673D79D2813A3120009B06F /* chartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C673D79C2813A3120009B06F /* chartsViewController.swift */; };
+		C673D79F2813A3730009B06F /* NSUIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C673D79E2813A3730009B06F /* NSUIColor+Hex.swift */; };
 		C6BAD3F82813614300807C62 /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAD3F72813614300807C62 /* MyEventsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +97,8 @@
 		94C8E58027D8173900CF3B25 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94C8E58227D8174B00CF3B25 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		94D6890427D855ED00EEA71A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C673D79C2813A3120009B06F /* chartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chartsViewController.swift; sourceTree = "<group>"; };
+		C673D79E2813A3730009B06F /* NSUIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUIColor+Hex.swift"; sourceTree = "<group>"; };
 		C6BAD3F72813614300807C62 /* MyEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +117,7 @@
 				94AA204227D80ACF00B58D43 /* FirebaseStorage in Frameworks */,
 				94AA203227D80ACF00B58D43 /* FirebaseDatabase in Frameworks */,
 				94AA203A27D80ACF00B58D43 /* FirebaseFunctions in Frameworks */,
+				C673D79B28139F9F0009B06F /* Charts in Frameworks */,
 				94AA202E27D80ACF00B58D43 /* FirebaseAuth in Frameworks */,
 				94AA203427D80ACF00B58D43 /* FirebaseDynamicLinks in Frameworks */,
 				94AA203627D80ACF00B58D43 /* FirebaseFirestore in Frameworks */,
@@ -174,6 +180,7 @@
 				36EE5908280A62DD00E6B7D9 /* CustomTableViewCell.swift */,
 				36EE590A280A62DD00E6B7D9 /* CustomTableViewCell.xib */,
 				36EE5907280A62DD00E6B7D9 /* PastEventTableViewController.swift */,
+				C673D79C2813A3120009B06F /* chartsViewController.swift */,
 				36EE5909280A62DD00E6B7D9 /* ViewEventsViewController.swift */,
 				94D6890627D86F0F00EEA71A /* Media */,
 				94AA200127D8073600B58D43 /* Assets.xcassets */,
@@ -182,6 +189,7 @@
 				94AA1FFE27D8073500B58D43 /* Team_Bravo.xcdatamodeld */,
 				94AA202827D8074900B58D43 /* GoogleService-Info.plist */,
 				94D6890427D855ED00EEA71A /* Constants.swift */,
+				C673D79E2813A3730009B06F /* NSUIColor+Hex.swift */,
 			);
 			path = "Team-Bravo";
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 				94AA204127D80ACF00B58D43 /* FirebaseStorage */,
 				94AA204327D80ACF00B58D43 /* FirebaseStorageCombine-Community */,
 				94666A3B28136F3400D71322 /* SideMenu */,
+				C673D79A28139F9F0009B06F /* Charts */,
 			);
 			productName = "Team-Bravo";
 			productReference = 94AA1FF227D8073500B58D43 /* Team-Bravo.app */;
@@ -318,6 +327,7 @@
 			packageReferences = (
 				94AA202A27D80ACF00B58D43 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				94666A3A28136F3400D71322 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				C673D79928139F9F0009B06F /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 94AA1FF327D8073500B58D43 /* Products */;
 			projectDirPath = "";
@@ -373,11 +383,13 @@
 				94AA1FFA27D8073500B58D43 /* ViewController.swift in Sources */,
 				94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */,
 				36EE590C280A62DD00E6B7D9 /* CustomTableViewCell.swift in Sources */,
+				C673D79D2813A3120009B06F /* chartsViewController.swift in Sources */,
 				2FC89DDE2804DBD600B0E001 /* EventDetailsVC.swift in Sources */,
 				C6BAD3F82813614300807C62 /* MyEventsViewController.swift in Sources */,
 				36EE590B280A62DD00E6B7D9 /* PastEventTableViewController.swift in Sources */,
 				94AA1FF827D8073500B58D43 /* SceneDelegate.swift in Sources */,
 				2FCE6EFF28138D2200C82B46 /* ProfileViewController.swift in Sources */,
+				C673D79F2813A3730009B06F /* NSUIColor+Hex.swift in Sources */,
 				94AA200027D8073500B58D43 /* Team_Bravo.xcdatamodeld in Sources */,
 				2FCE6F0028138D2200C82B46 /* AboutViewController.swift in Sources */,
 				94D6890527D855ED00EEA71A /* Constants.swift in Sources */,
@@ -742,6 +754,14 @@
 				minimumVersion = 8.9.0;
 			};
 		};
+		C673D79928139F9F0009B06F /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -814,6 +834,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 94AA202A27D80ACF00B58D43 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		C673D79A28139F9F0009B06F /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C673D79928139F9F0009B06F /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 
