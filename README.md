@@ -14,21 +14,21 @@ Note -> Email Id and Password can be found on **Reference.pdf**.
 
 Launching the app -
 
-<img width="101" alt="image" src="https://user-images.githubusercontent.com/99898394/164838448-6284e3db-c526-4727-98dc-1f87ae2f9f6a.png">
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 10 23](https://user-images.githubusercontent.com/99898394/164864966-96ff6787-8ded-4cb0-ba12-67dd17b4d951.png)
 
 Landing screen -
 
 -> User can use either of the two button “Sign Up” and “Login”.
 
-<img width="117" alt="image" src="https://user-images.githubusercontent.com/99898394/164838642-4ac8ca63-aaf2-48e4-995c-08963a528033.png">
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 10 50](https://user-images.githubusercontent.com/99898394/164865039-a39d39d4-39bd-4e77-ab47-3b835bfc1ddb.png)
 
 -> “Sign Up” button can be used for creating a new account.
 
-<img width="117" alt="image" src="https://user-images.githubusercontent.com/99898394/164838651-715efe63-bb8f-49e6-b3c5-4073fd4c41db.png">
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 11 46](https://user-images.githubusercontent.com/99898394/164865226-d00dceff-f24c-4dbc-a820-82b4aff7eec0.png)
 
 -> “Login” button can be used for returning user.
 
-<img width="117" alt="image" src="https://user-images.githubusercontent.com/99898394/164838662-f57b65f0-20e7-4706-bffc-5d67efa07979.png">
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 12 29](https://user-images.githubusercontent.com/99898394/164865358-f89705f1-8cab-40e2-9e8d-111abf15c60a.png)
 
 Dashboard -
 
@@ -50,7 +50,15 @@ Dashboard -
 
 -> “View Events” will display all the current events.
 
+Each event will have a BOOK option to book the tickets if the event date is a future date.
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 15 57](https://user-images.githubusercontent.com/99898394/164865607-50263ad2-7871-46b9-a8e4-354ed9f49858.png)
+
+
 -> “Create Events” will be used for creating an event.
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 14 39](https://user-images.githubusercontent.com/99898394/164865543-13ba0d53-13b8-4c98-bbf1-38f6183cb8d6.png)
+
 
 -> “My Events” will be used for displaying the events created by the logged in user.
 
