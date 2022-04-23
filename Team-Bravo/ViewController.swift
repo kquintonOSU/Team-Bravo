@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     func setUpVideo() {
-        let bundlePath = Bundle.main.path(forResource: "example3", ofType: "mp4")
+        let bundlePath = Bundle.main.path(forResource: "landing-video", ofType: "mp4")
         
         guard bundlePath != nil else {
             return

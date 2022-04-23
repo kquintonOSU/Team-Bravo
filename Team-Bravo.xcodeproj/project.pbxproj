@@ -13,7 +13,7 @@
 		36EE590C280A62DD00E6B7D9 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5908280A62DD00E6B7D9 /* CustomTableViewCell.swift */; };
 		36EE590D280A62DD00E6B7D9 /* ViewEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5909280A62DD00E6B7D9 /* ViewEventsViewController.swift */; };
 		36EE590E280A62DD00E6B7D9 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EE590A280A62DD00E6B7D9 /* CustomTableViewCell.xib */; };
-		940606E127E93DE400734F35 /* example3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 940606E027E93DE400734F35 /* example3.mp4 */; };
+		940606E127E93DE400734F35 /* landing-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 940606E027E93DE400734F35 /* landing-video.mp4 */; };
 		94666A3C28136F3400D71322 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 94666A3B28136F3400D71322 /* SideMenu */; };
 		94828DF627D82F57009A521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94AA1FFB27D8073500B58D43 /* Main.storyboard */; };
 		94AA1FF627D8073500B58D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AA1FF527D8073500B58D43 /* AppDelegate.swift */; };
@@ -43,7 +43,6 @@
 		94C8E58127D8173900CF3B25 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C8E58027D8173900CF3B25 /* SignUpViewController.swift */; };
 		94C8E58327D8174B00CF3B25 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C8E58227D8174B00CF3B25 /* LoginViewController.swift */; };
 		94D6890527D855ED00EEA71A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6890427D855ED00EEA71A /* Constants.swift */; };
-		94D6890827D86F4600EEA71A /* example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 94D6890727D86F4600EEA71A /* example.mp4 */; };
 		C6BAD3F82813614300807C62 /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BAD3F72813614300807C62 /* MyEventsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +70,7 @@
 		36EE5908280A62DD00E6B7D9 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		36EE5909280A62DD00E6B7D9 /* ViewEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventsViewController.swift; sourceTree = "<group>"; };
 		36EE590A280A62DD00E6B7D9 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		940606E027E93DE400734F35 /* example3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example3.mp4; sourceTree = "<group>"; };
+		940606E027E93DE400734F35 /* landing-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "landing-video.mp4"; sourceTree = "<group>"; };
 		94AA1FF227D8073500B58D43 /* Team-Bravo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team-Bravo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AA1FF527D8073500B58D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94AA1FF727D8073500B58D43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 		94C8E58027D8173900CF3B25 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		94C8E58227D8174B00CF3B25 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		94D6890427D855ED00EEA71A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		94D6890727D86F4600EEA71A /* example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.mp4; sourceTree = "<group>"; };
 		C6BAD3F72813614300807C62 /* MyEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,8 +200,7 @@
 		94D6890627D86F0F00EEA71A /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				940606E027E93DE400734F35 /* example3.mp4 */,
-				94D6890727D86F4600EEA71A /* example.mp4 */,
+				940606E027E93DE400734F35 /* landing-video.mp4 */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -332,12 +329,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D6890827D86F4600EEA71A /* example.mp4 in Resources */,
 				36EE590E280A62DD00E6B7D9 /* CustomTableViewCell.xib in Resources */,
 				94AA200527D8073600B58D43 /* LaunchScreen.storyboard in Resources */,
 				94AA202927D8074900B58D43 /* GoogleService-Info.plist in Resources */,
 				94AA200227D8073600B58D43 /* Assets.xcassets in Resources */,
-				940606E127E93DE400734F35 /* example3.mp4 in Resources */,
+				940606E127E93DE400734F35 /* landing-video.mp4 in Resources */,
 				94828DF627D82F57009A521D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
