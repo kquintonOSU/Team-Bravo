@@ -3,6 +3,7 @@
 Reserva is a one-stop solution for event planning. Reserva app entitles you to efficiently create, book, and view events.
 
 The database used is - Firebase DB
+
 Firebase URL - https://console.firebase.google.com/project/team-bravo-c7ad0/overview
 
 Note -> Email Id and Password can be found on **Reference.pdf**.
