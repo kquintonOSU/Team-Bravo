@@ -16,5 +16,7 @@ struct Constants {
         static let EventDetailsVC = "EventDetailsVC"
         static let ViewEventsViewController = "ViewEventsViewController"
         static let pastEventTVC = "PastEventTVC"
+        static let profileVC = "ProfileVC"
+        static let aboutVC = "AboutVC"
     }
 }

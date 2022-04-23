@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2FC89DDC2804DBAD00B0E001 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */; };
 		2FC89DDE2804DBD600B0E001 /* EventDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */; };
+		2FCE6EFF28138D2200C82B46 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCE6EFD28138D2200C82B46 /* ProfileViewController.swift */; };
+		2FCE6F0028138D2200C82B46 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCE6EFE28138D2200C82B46 /* AboutViewController.swift */; };
 		36EE590B280A62DD00E6B7D9 /* PastEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5907280A62DD00E6B7D9 /* PastEventTableViewController.swift */; };
 		36EE590C280A62DD00E6B7D9 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5908280A62DD00E6B7D9 /* CustomTableViewCell.swift */; };
 		36EE590D280A62DD00E6B7D9 /* ViewEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EE5909280A62DD00E6B7D9 /* ViewEventsViewController.swift */; };
@@ -66,6 +68,8 @@
 /* Begin PBXFileReference section */
 		2FC89DDB2804DBAD00B0E001 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
 		2FC89DDD2804DBD600B0E001 /* EventDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
+		2FCE6EFD28138D2200C82B46 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2FCE6EFE28138D2200C82B46 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		36EE5907280A62DD00E6B7D9 /* PastEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventTableViewController.swift; sourceTree = "<group>"; };
 		36EE5908280A62DD00E6B7D9 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		36EE5909280A62DD00E6B7D9 /* ViewEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEventsViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			children = (
 				94AA1FF527D8073500B58D43 /* AppDelegate.swift */,
 				94AA1FF727D8073500B58D43 /* SceneDelegate.swift */,
+				2FCE6EFE28138D2200C82B46 /* AboutViewController.swift */,
+				2FCE6EFD28138D2200C82B46 /* ProfileViewController.swift */,
 				94C8E58027D8173900CF3B25 /* SignUpViewController.swift */,
 				94C8E57E27D8172B00CF3B25 /* HomeViewController.swift */,
 				94C8E58227D8174B00CF3B25 /* LoginViewController.swift */,
@@ -371,7 +377,9 @@
 				C6BAD3F82813614300807C62 /* MyEventsViewController.swift in Sources */,
 				36EE590B280A62DD00E6B7D9 /* PastEventTableViewController.swift in Sources */,
 				94AA1FF827D8073500B58D43 /* SceneDelegate.swift in Sources */,
+				2FCE6EFF28138D2200C82B46 /* ProfileViewController.swift in Sources */,
 				94AA200027D8073500B58D43 /* Team_Bravo.xcdatamodeld in Sources */,
+				2FCE6F0028138D2200C82B46 /* AboutViewController.swift in Sources */,
 				94D6890527D855ED00EEA71A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

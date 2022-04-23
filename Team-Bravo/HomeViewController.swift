@@ -6,41 +6,42 @@
 //
 
 import UIKit
+import SideMenu
 import Firebase
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, MenuViewControllerDelegate {
 //    let user = Auth.auth().currentUser?.displayName
+    
+    private var showSideMenu: SideMenuNavigationController?
 
     var firebaseUserID = ""
-    var displayName = ""
+    var email_ = ""
+    var firstName = ""
+    var lastName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Welcome, \(displayName)"
-        // currentUserInfo()
-        
+        let ListMenu = MenuViewController(with: ["Profile", "About"])
+        ListMenu.delegate = self
+        showSideMenu = SideMenuNavigationController(rootViewController: ListMenu)
+
+        showSideMenu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = showSideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+
+        welcomeLabel.text = "Welcome to Reserva"
         print("======== FirebaseID: ", firebaseUserID)
         // Do any additional setup after loading the view.
     }
     
-//    func currentUserInfo() {
-//        if Auth.auth().currentUser != nil {
-//            let user = Auth.auth().currentUser
-//            if let user = user {
-//                let displayName = user.displayName
-//
-//
-//                welcomeLabel.text = "Welcome, \(displayName!)"
-//            }
-//        } else {
-//            print("no user logged in")
-//        }
-//
-//    }
+    @IBAction func tappedMenuBarButton(){
+        present(showSideMenu!, animated: true)
+    }
     
     func transitionToSellers() {
         let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.CreateEventVC) as? CreateEventVC
         vc?.firebaseUserID = firebaseUserID
+        print("Transitioning to seller: ", vc)
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
@@ -54,10 +55,10 @@ class HomeViewController: UIViewController {
         //once we complete this, we can add styling and some things prof mentioned.
     }
     
-    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var myEvents: UIButton!
     @IBOutlet weak var buyers: UIButton!
     @IBOutlet weak var sellers: UIButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     
     @IBAction func didSellersSelected(_ sender: Any) {
@@ -73,6 +74,37 @@ class HomeViewController: UIViewController {
         //statistics for logged in users posted events
         //we are almost done
     }
+    
+    func transitionToProfile() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.profileVC) as? ProfileViewController
+            //vc?.firebaseUserID = firebaseUserID
+        vc?.email_ = email_
+        vc?.firstName_ = firstName
+        vc?.LastName_ = lastName
+
+        print("Transitioning to Profile: ", vc)
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    func transitionToAbout() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.aboutVC) as? AboutViewController
+            //vc?.firebaseUserID = firebaseUserID
+        print("Transitioning to About: ", vc)
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    func tappedMenuItem(controllerItem: String) {
+        if controllerItem == "Profile"{
+            print("========= Profile ========")
+            showSideMenu?.dismiss(animated: true)
+            transitionToProfile()
+        }else{
+            print("========= Others ========")
+            showSideMenu?.dismiss(animated: true)
+            transitionToAbout()
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -83,4 +115,60 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+
+protocol MenuViewControllerDelegate{
+    func tappedMenuItem(controllerItem: String)
+}
+
+
+
+class MenuViewController: UITableViewController{
+    private let itemInMenu : [String]
+    
+    public var delegate: MenuViewControllerDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.backgroundColor = .darkGray
+        view.backgroundColor = .darkGray
+    }
+    
+    
+    init(with items: [String]) {
+        self.itemInMenu = items
+        super.init(nibName: nil, bundle: nil)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Error in loading init")
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itemInMenu.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = itemInMenu[indexPath.row]
+        cell.textLabel?.textColor = .white
+        cell.backgroundColor = .darkGray
+        cell.contentView.backgroundColor = .lightGray
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let tappedItemNow = itemInMenu[indexPath.row]
+        delegate?.tappedMenuItem(controllerItem: tappedItemNow)
+    }
+    
+    func transitionToProfile() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.profileVC) as? ProfileViewController
+            //vc?.firebaseUserID = firebaseUserID
+        print("Transitioning to Profile: ", vc)
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
 }
