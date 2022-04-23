@@ -31,7 +31,21 @@ Landing screen -
 
 Dashboard -
 
+**Side menu will have two buttons "Profile" and "About".**
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 01 30](https://user-images.githubusercontent.com/99898394/164863341-c24d0c88-3dfd-41f5-9ba3-cb25d3aceb8b.png)
+
+-> "Profile" will display the user details.
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 03 56](https://user-images.githubusercontent.com/99898394/164863725-80cae5ee-f898-45c5-acc3-bc46a5b193af.png)
+
+-> "About" will display the brief intro about app and the contributors names.
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 05 26](https://user-images.githubusercontent.com/99898394/164864026-3d344624-d129-4b3e-a802-49fac02f355e.png)
+
 -> User can use any of the three button “View Events”, “Create Events” and “My Events”.
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 01 04](https://user-images.githubusercontent.com/99898394/164863150-4b12d31e-55b6-46e5-87c0-a1e0c7b38ca1.png)
 
 -> “View Events” will display all the current events.
 
