@@ -48,6 +48,10 @@ Dashboard -
 
 ![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 21 01 04](https://user-images.githubusercontent.com/99898394/164863150-4b12d31e-55b6-46e5-87c0-a1e0c7b38ca1.png)
 
+-> If an event is scheduled then below popup will be pop up.
+
+Simulator Screen Shot - iPhone 11 - 2022-04-22 at 23.32.34
+
 -> “View Events” will display all the current events.
 
 Each event will have a BOOK option to book the tickets if the event date is a future date.
@@ -61,6 +65,14 @@ Each event will have a BOOK option to book the tickets if the event date is a fu
 
 
 -> “My Events” will be used for displaying the events created by the logged in user.
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 23 35 09](https://user-images.githubusercontent.com/99898394/164877769-8701ed9d-b63d-443f-ac25-14177ca2bc91.png)
+
+
+Statistics screen which will show the tickets booked out of 100 available seats -
+
+![Simulator Screen Shot - iPhone 11 - 2022-04-22 at 23 36 06](https://user-images.githubusercontent.com/99898394/164877818-6ece9b44-5998-4de8-a94a-f95d512c0697.png)
+
 
 
 
